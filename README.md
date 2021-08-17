@@ -12,9 +12,8 @@
 6. The app will be served on your localhost.
 
 App runs in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-Use [http://localhost:5000](http://localhost:5000) to access the server
-
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
+Use [http://localhost:3000](http://localhost:3000) to access the server
 
 Application by: <h4> GAYATHRI B M </h4>
 
