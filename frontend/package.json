@@ -11,6 +11,8 @@
         "start": "webpack-dev-server --open"
     },
     "dependencies": {
+        "babel-plugin-js-to-jsx": "^2.1.0",
+        "babel-preset-react": "^6.24.1",
         "history": "^4.10.1",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
@@ -24,7 +26,7 @@
         "@babel/core": "^7.4.3",
         "@babel/preset-env": "^7.4.3",
         "@babel/preset-react": "^7.0.0",
-        "babel-loader": "^8.0.5",
+        "babel-loader": "^8.2.2",
         "html-webpack-plugin": "^3.2.0",
         "path": "^0.12.7",
         "webpack": "^4.29.6",

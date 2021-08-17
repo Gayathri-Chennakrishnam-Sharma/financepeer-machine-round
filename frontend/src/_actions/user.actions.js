@@ -7,6 +7,7 @@ export const userActions = {
     login,
     logout,
     register,
+    uploadFile,
     getAll,
     delete: _delete
 };
@@ -60,6 +61,28 @@ function register(user) {
     function success(user) { return { type: userConstants.REGISTER_SUCCESS, user } }
     function failure(error) { return { type: userConstants.REGISTER_FAILURE, error } }
 }
+
+function uploadFile(file){
+    return dispatch=> {
+        dispatch(request(file));
+
+        userService.register(file)
+            .then(
+                file => { 
+                    dispatch(success());
+                    history.push('/upload');
+                    dispatch(alertActions.success('file uploaded successfully'));
+                },
+                error => {
+                    dispatch(failure(error.toString()));
+                    dispatch(alertActions.error(error.toString()));
+                }
+            );
+    };
+    function request(file) { return { type: alertActions.success, file } }
+    function success(error) { return { type: alertActions.error, file } }
+}
+
 
 function getAll() {
     return dispatch => {

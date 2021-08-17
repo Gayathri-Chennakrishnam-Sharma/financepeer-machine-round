@@ -5,6 +5,7 @@ export const userService = {
     login,
     logout,
     register,
+    uploadFile,
     getAll,
     getById,
     update,
@@ -97,4 +98,21 @@ function handleResponse(response) {
 
         return data;
     });
+}
+
+function uploadFile(file) {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId })
+    };
+
+    return fetch(`${config.apiUrl}/users/uploadFile`, requestOptions)
+        .then(handleResponse)
+        .then(user => {
+            // store user details and jwt token in local storage to keep user logged in between page refreshes
+            localStorage.setItem('file', JSON.stringify(file));
+
+            return file;
+        });
 }
